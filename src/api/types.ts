@@ -87,6 +87,19 @@ export type ApiAssetShortResponse = {
 	maintenance_margin: string | null
 };
 
+export type ApiContractFiltersQuery = {
+	contract_address?: string;
+	futures_asset_hash?: string;
+	contract_state?: number;
+	active?: boolean;
+	margin?: number;
+	expires_in_seconds?: number;
+	is_model?: boolean;
+	is_hidden?: boolean;
+	limit?: number;
+	offset?: number;
+};
+
 export type ApiContractResponse = {
 	id: number;
 	contract_address: string;
@@ -127,4 +140,82 @@ export type ApiContractMultiplierQuery = {
 export type ApiContractMultiplierResponse = {
 	multiplier: string;
 	base_token: string;
+}
+
+export type ApiBaseTokenResponse = {
+	symbol: string;
+	token_address: string;
+}
+
+export type ApiAssetQuery = {
+	contract_address?: string;
+	base_token?: string;
+	name?: string;
+	symbol?: string;
+	type?: string;
+	limit?: number;
+	offset?: number;
+};
+
+export type ApiAssetResponse = {
+	id: number;
+	contract_address: string;
+	futures_asset_hash: string;
+	name: string;
+	label: string;
+	symbol: string;
+	chart_symbol: string;
+	base_token: string;
+	max_margin: number;
+	recommended_contract: {
+		futures_contract_hash: string;
+		id: number;
+	}
+}
+
+export type ApiPositionQuery = {
+	user_address: string;
+};
+
+export type ApiPositionResponse = {
+	id: number;
+	position_hash: string;
+	side: boolean;
+	size: string;
+	price: string;
+	contract_address: string;
+	futures_contract_hash: string;
+	user_address: string;
+	collateral: string;
+	funding_cost: string;
+	entry_block: number;
+	fee: string;
+	closed_at: string|null;
+	created_at: string;
+	max_collateral: string;
+	mark_price: string;
+	expires_in_seconds: number;
+	pnl: string;
+	realized_pnl: string;
+	liq_price: string;
+	leverage: number;
+	value: string;
+	futures_contract: {
+		multiplier: string;
+		expires_in_seconds: number;
+	};
+	futures_asset: {
+		name: string;
+		label: string;
+		symbol: string;
+		chart_symbol: string;
+		decimals: number;
+		amount_dec: number;
+		notional: string;
+		base_token: {
+			address: string;
+			symbol: string;
+			name: string;
+		};
+	};
 }

@@ -13,9 +13,15 @@ import type {
 	ApiMinOrderAmountQuery,
 	ApiMinOrderAmountGuestResponse,
 	ApiMinOrderAmountUserResponse,
+	ApiContractFiltersQuery,
 	ApiContractResponse,
 	ApiContractMultiplierQuery,
-	ApiContractMultiplierResponse
+	ApiContractMultiplierResponse,
+	ApiBaseTokenResponse,
+	ApiAssetQuery,
+	ApiAssetResponse,
+	ApiPositionQuery,
+	ApiPositionResponse
 } from './types';
 import {ApiError} from '../errors';
 
@@ -47,7 +53,7 @@ export class DmexApi {
 	}
 
 	/**
-	 * Perform http request to API base URL
+	 * Perform a http request to API base URL
 	 *
 	 * @param reqParams Request params
 	 * @returns API response
@@ -152,7 +158,21 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get futures contract details
+	 * Get futures contracts
+	 *
+	 * @param params Futures contract filters
+	 * @returns Filtered futures contracts
+	 */
+	public getContracts(params?: ApiContractFiltersQuery): Promise<ApiResponse<ApiContractResponse[]>> {
+		return this.httpRequest({
+			url: '/api/futures/contracts',
+			method: 'get',
+			params
+		});
+	}
+
+	/**
+	 * Get one futures contract
 	 *
 	 * @param contractHash Futures contract hash
 	 * @returns Futures contract details
@@ -174,9 +194,74 @@ export class DmexApi {
 		return this.httpRequest({
 			url: '/api/futures/contracts/multiplier',
 			method: 'get',
-			params: {
-				base_token: params.base_token
-			}
+			params
+		});
+	}
+
+	/**
+	 * Get base token by symbol
+	 *
+	 * @param symbol The symbol (ETH)
+	 * @returns Object response
+	 */
+	public getBaseTokenBySymbol(symbol: string): Promise<ApiResponse<ApiBaseTokenResponse>> {
+		return this.httpRequest({
+			url: `/api/futures/base-tokens/symbol/${symbol}`,
+			method: 'get'
+		});
+	}
+
+	/**
+	 * Get default base token
+	 *
+	 * @returns Object response
+	 */
+	public getDefaultBaseToken(): Promise<ApiResponse<ApiBaseTokenResponse>> {
+		return this.httpRequest({
+			url: '/api/futures/base-tokens/default',
+			method: 'get'
+		});
+	}
+
+	/**
+	 * Get futures assets
+	 *
+	 * @param params Filter parameters
+	 * @returns Filtered assets
+	 */
+	public getAssets(params?: ApiAssetQuery): Promise<ApiResponse<ApiAssetResponse[]>> {
+		return this.httpRequest({
+			url: '/api/futures/assets',
+			method: 'get',
+			params
+		});
+	}
+
+	/**
+	 * Get open positions
+	 *
+	 * @param params Query parameters
+	 * @returns Open positions
+	 */
+	public getOpenPositions(params: ApiPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
+		return this.httpRequest({
+			url: '/api/futures/positions-v2/open',
+			method: 'get',
+			params
+		});
+	}
+
+	/**
+	 * Get closed positions
+	 *
+	 * @param params Query parameters
+	 * @returns Open positions
+	 */
+	public getClosedPositions(params: ApiPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
+		return this.httpRequest({
+			url: '/api/futures/positions-v2/closed',
+			method: 'get',
+			params
 		});
 	}
 }
