@@ -1,13 +1,21 @@
 import BigNumber from 'bignumber.js';
 
+import type {
+	ClientParams,
+	CreateOrderWithContractHashParams,
+	CreateOrderParams
+} from './types';
+import type {
+	ApiCreateOrderQuery,
+	ApiContractResponse,
+	ApiMinOrderAmountUserResponse,
+	ApiAssetResponse
+} from '../api';
+import {createOrderHash, createCancelOrderHash, createContractHash} from './hashes';
 import {AVG_BLOCK_TIME} from '../configs';
 import {DmexApi} from '../api';
-import type {ApiCreateOrderQuery, ApiContractResponse} from '../api';
 import {DmexWallet} from './wallet';
-import {createOrderHash, createCancelOrderHash, createContractHash} from './hashes';
 import {nextNonce} from '../utils';
-import type {ClientParams, CreateOrderParams} from './types';
-import type {ApiMinOrderAmountUserResponse} from '../api';
 import {ClientError} from '../errors';
 
 /**
@@ -30,7 +38,7 @@ export class DmexClient {
 	}
 
 	/**
-	 * Set active wallet (used for signatures and authentication)
+	 * Set active wallet
 	 *
 	 * @param privateKey Wallet private key
 	 */
@@ -51,14 +59,53 @@ export class DmexClient {
 	 * Create order
 	 *
 	 * @param params Order parameters
-	 * @return Created order hash
+	 * @returns Order hash
 	 */
 	public async createOrder(params: CreateOrderParams): Promise<string> {
-		const createOrderParams = await this.prepareCreateOrder(params);
+		const {data: baseToken} = params.margin_currency === undefined
+			? await this.api.getDefaultBaseToken()
+			: await this.api.getBaseTokenBySymbol(params.margin_currency);
 
-		await this.api.createOrder(createOrderParams);
+		let expiresInSeconds = params.expires_seconds ?? -1;
+		if (expiresInSeconds === -1) {
+			expiresInSeconds = 31536000;
+		}
 
-		return createOrderParams.order_hash;
+		const asset = await this.getAssetBySymbolAndBaseToken(params.asset_symbol, baseToken.token_address);
+
+		const {data: positions} = await this.api.getOpenPositions({
+			user_address: this.wallet.getAddress(),
+			futures_asset_hash: asset.futures_asset_hash,
+			side: !params.side,
+			contract_expires_in_seconds: expiresInSeconds,
+			contract_margin: params.leverage
+		});
+
+		if (positions.length > 0) {
+			return this.createOrderOnExistingContract({
+				futures_contract_hash: positions[0].futures_contract_hash,
+				amount: params.amount,
+				leverage: params.leverage,
+				price: params.price,
+				side: params.side,
+				stop_price: params.stop_price
+			});
+		}
+
+		const modelContract = await this.getModelContract(
+			asset.futures_asset_hash,
+			expiresInSeconds,
+			params.leverage
+		);
+
+		return this.createOrderOnNewContract({
+			futures_contract_hash: modelContract.futures_contract_hash,
+			amount: params.amount,
+			leverage: params.leverage,
+			price: params.price,
+			side: params.side,
+			stop_price: params.stop_price
+		});
 	}
 
 	/**
@@ -88,14 +135,16 @@ export class DmexClient {
 		});
 	}
 
-	/**
-	 * Create order and futures contract simultaneously
-	 *
-	 * @param params Order and futures contract model
-	 * @return Created order hash
-	 */
-	public async createOrderWithModelContract(params: CreateOrderParams): Promise<string> {
-		const modelContract = await this.getContract(params.futures_contract_hash);
+	private async createOrderOnExistingContract(params: CreateOrderWithContractHashParams): Promise<string> {
+		const createOrderParams = await this.prepareCreateOrder(params);
+
+		await this.api.createOrder(createOrderParams);
+
+		return createOrderParams.order_hash;
+	}
+
+	private async createOrderOnNewContract(params: CreateOrderWithContractHashParams): Promise<string> {
+		const {data: modelContract} = await this.api.getContract(params.futures_contract_hash);
 		if (!modelContract.is_model) {
 			throw new ClientError(`Specified futures contract is not an model contract (hash: ${params.futures_contract_hash})`);
 		}
@@ -157,7 +206,7 @@ export class DmexClient {
 		return createOrderProps.order_hash;
 	}
 
-	private async prepareCreateOrder(params: CreateOrderParams): Promise<ApiCreateOrderQuery> {
+	private async prepareCreateOrder(params: CreateOrderWithContractHashParams): Promise<ApiCreateOrderQuery> {
 		const nonce = nextNonce();
 
 		const leverage = new BigNumber(params.leverage).shiftedBy(8).toFixed(0);
@@ -196,11 +245,39 @@ export class DmexClient {
 		}).then(res => res.data);
 	}
 
-	private getContract(contractHash: string): Promise<ApiContractResponse> {
-		return this.api.getContract(contractHash).then(res => res.data);
-	}
-
 	private getMultiplier(baseToken: string): Promise<string> {
 		return this.api.getMultiplier({base_token: baseToken}).then(res => res.data.multiplier);
+	}
+
+	private getAssetBySymbolAndBaseToken(symbol: string, baseTokenAddr: string): Promise<ApiAssetResponse> {
+		return this.api.getAssets({
+			contract_address: this.contractAddress,
+			symbol,
+			base_token: baseTokenAddr,
+			limit: 1
+		}).then(res => {
+			if (res.data.length !== 1) {
+				throw new ClientError('Asset not found');
+			}
+
+			return res.data[0];
+		});
+	}
+
+	private getModelContract(assetHash: string, expireInSeconds: number, leverage: number): Promise<ApiContractResponse> {
+		return this.api.getContracts({
+			futures_asset_hash: assetHash,
+			expires_in_seconds: expireInSeconds,
+			margin: leverage,
+			is_model: true,
+			is_hidden: false,
+			limit: 1
+		}).then(res => {
+			if (res.data.length !== 1) {
+				throw new ClientError('Contract not found');
+			}
+
+			return res.data[0];
+		});
 	}
 }

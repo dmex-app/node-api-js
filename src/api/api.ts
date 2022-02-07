@@ -20,7 +20,7 @@ import type {
 	ApiBaseTokenResponse,
 	ApiAssetQuery,
 	ApiAssetResponse,
-	ApiPositionQuery,
+	ApiOpenPositionQuery,
 	ApiPositionResponse
 } from './types';
 import {ApiError} from '../errors';
@@ -243,23 +243,9 @@ export class DmexApi {
 	 * @param params Query parameters
 	 * @returns Open positions
 	 */
-	public getOpenPositions(params: ApiPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
+	public getOpenPositions(params: ApiOpenPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
 		return this.httpRequest({
 			url: '/api/futures/positions-v2/open',
-			method: 'get',
-			params
-		});
-	}
-
-	/**
-	 * Get closed positions
-	 *
-	 * @param params Query parameters
-	 * @returns Open positions
-	 */
-	public getClosedPositions(params: ApiPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
-		return this.httpRequest({
-			url: '/api/futures/positions-v2/closed',
 			method: 'get',
 			params
 		});

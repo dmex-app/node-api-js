@@ -173,8 +173,13 @@ export type ApiAssetResponse = {
 	}
 }
 
-export type ApiPositionQuery = {
+export type ApiOpenPositionQuery = {
 	user_address: string;
+	contract_address?: string;
+	futures_asset_hash?: string;
+	side?: boolean;
+	contract_expires_in_seconds?: number;
+	contract_margin?: number
 };
 
 export type ApiPositionResponse = {
