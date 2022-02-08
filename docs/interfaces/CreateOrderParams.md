@@ -2,6 +2,8 @@
 
 # Interface: CreateOrderParams
 
+Create order parameters
+
 ## Table of contents
 
 ### Properties
@@ -23,7 +25,7 @@
 
 #### Defined in
 
-[client/types.ts:25](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L25)
+[client/types.ts:26](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L26)
 
 ___
 
@@ -33,7 +35,7 @@ ___
 
 #### Defined in
 
-[client/types.ts:21](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L21)
+[client/types.ts:21](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L21)
 
 ___
 
@@ -41,9 +43,11 @@ ___
 
 • `Optional` **expires\_seconds**: `number`
 
+Contract expiration in seconds. Set -1 for perpetual.
+
 #### Defined in
 
-[client/types.ts:23](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L23)
+[client/types.ts:24](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L24)
 
 ___
 
@@ -53,7 +57,7 @@ ___
 
 #### Defined in
 
-[client/types.ts:24](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L24)
+[client/types.ts:25](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L25)
 
 ___
 
@@ -63,7 +67,7 @@ ___
 
 #### Defined in
 
-[client/types.ts:22](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L22)
+[client/types.ts:22](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L22)
 
 ___
 
@@ -73,7 +77,7 @@ ___
 
 #### Defined in
 
-[client/types.ts:26](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L26)
+[client/types.ts:27](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L27)
 
 ___
 
@@ -81,9 +85,11 @@ ___
 
 • **side**: `boolean`
 
+Long is true, short is false.
+
 #### Defined in
 
-[client/types.ts:27](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L27)
+[client/types.ts:29](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L29)
 
 ___
 
@@ -93,4 +99,4 @@ ___
 
 #### Defined in
 
-[client/types.ts:28](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L28)
+[client/types.ts:30](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L30)

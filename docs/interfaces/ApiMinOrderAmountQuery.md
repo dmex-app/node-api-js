@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[api/types.ts:61](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/api/types.ts#L61)
+[api/types.ts:61](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L61)

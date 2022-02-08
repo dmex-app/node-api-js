@@ -2,6 +2,8 @@
 
 # Interface: ClientParams
 
+Dmex Client constructor parameters
+
 ## Table of contents
 
 ### Properties
@@ -16,9 +18,11 @@
 
 • `Optional` **apiParams**: [`ApiParams`](ApiParams.md)
 
+API parameters (Base URL, timeout)
+
 #### Defined in
 
-[client/types.ts:6](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L6)
+[client/types.ts:10](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L10)
 
 ___
 
@@ -26,9 +30,11 @@ ___
 
 • **contractAddress**: `string`
 
+DMEX Trading smart contract address
+
 #### Defined in
 
-[client/types.ts:8](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L8)
+[client/types.ts:14](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L14)
 
 ___
 
@@ -36,6 +42,8 @@ ___
 
 • **walletPrivateKey**: `string`
 
+Used for signatures
+
 #### Defined in
 
-[client/types.ts:7](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/types.ts#L7)
+[client/types.ts:12](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/types.ts#L12)

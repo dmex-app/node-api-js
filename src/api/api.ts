@@ -29,9 +29,7 @@ import {ApiError} from '../errors';
  * DMEX API wrapper
  */
 export class DmexApi {
-	public readonly baseURL: string;
-	public readonly timeout: number;
-	public readonly axios: AxiosInstance;
+	private readonly axios: AxiosInstance;
 
 	/**
 	 * Constructor
@@ -40,12 +38,9 @@ export class DmexApi {
 	 * @param timeout HTTP request timeout
 	 */
 	constructor({baseURL = API_BASE_URL, timeout = HTTP_TIMEOUT_MS}: ApiParams = {}) {
-		this.baseURL = baseURL;
-		this.timeout = timeout;
-
 		this.axios = axios.create({
-			baseURL: this.baseURL,
-			timeout: this.timeout,
+			baseURL: baseURL,
+			timeout: timeout,
 			headers: {
 				'X-Dmex-Api-Lib-Version': packageVersion
 			}
