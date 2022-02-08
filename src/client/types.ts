@@ -5,8 +5,7 @@ import type {
 export interface ClientParams {
 	apiParams?: ApiParams,
 	walletPrivateKey: string,
-	contractAddress: string,
-	avgBlockTime?: number
+	contractAddress: string
 }
 
 export interface CreateOrderWithContractHashParams {

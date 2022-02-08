@@ -12,7 +12,6 @@ import type {
 	ApiAssetResponse
 } from '../api';
 import {createOrderHash, createCancelOrderHash, createContractHash} from './hashes';
-import {AVG_BLOCK_TIME} from '../configs';
 import {DmexApi} from '../api';
 import {DmexWallet} from './wallet';
 import {nextNonce} from '../utils';
@@ -25,7 +24,6 @@ export class DmexClient {
 	public readonly api: DmexApi;
 	public contractAddress: string;
 	public wallet: DmexWallet;
-	public readonly avgBlockTime: number;
 
 	/**
 	 * @param clientParams Client parameters
@@ -34,7 +32,6 @@ export class DmexClient {
 		this.api = new DmexApi(clientParams.apiParams);
 		this.wallet = new DmexWallet(clientParams.walletPrivateKey);
 		this.contractAddress = clientParams.contractAddress;
-		this.avgBlockTime = clientParams.avgBlockTime ?? AVG_BLOCK_TIME;
 	}
 
 	/**
@@ -169,7 +166,7 @@ export class DmexClient {
 
 		const multiplier = await this.getMultiplier(modelContract.base_token);
 
-		const expirationBlock = Math.round(minOrder.block_number + (modelContract.expires_in_seconds / this.avgBlockTime));
+		const expirationBlock = Math.round(minOrder.block_number + (modelContract.expires_in_seconds / minOrder.avg_block_time));
 
 		const newContractHash = createContractHash({
 			contract_address: modelContract.contract_address,

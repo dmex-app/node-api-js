@@ -67,6 +67,7 @@ export interface ApiMinOrderAmountGuestResponse {
 	global_mm_multiplier: string;
 	global_fr_multiplier: string;
 	block_number: number;
+	avg_block_time: number;
 	liquidation_funds: { [key: string]: string; };
 	base_multipliers: { [key: string]: string; };
 }
