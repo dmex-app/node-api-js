@@ -22,4 +22,4 @@
 
 #### Defined in
 
-[api/types.ts:9](https://github.com/dmex-app/node-api-js/blob/873b0f8/src/api/types.ts#L9)
+[api/types.ts:9](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/api/types.ts#L9)

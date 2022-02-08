@@ -29,7 +29,7 @@ DMEX Wallet
 
 #### Defined in
 
-[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/873b0f8/src/client/wallet.ts#L12)
+[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/wallet.ts#L12)
 
 ## Methods
 
@@ -43,7 +43,7 @@ DMEX Wallet
 
 #### Defined in
 
-[client/wallet.ts:16](https://github.com/dmex-app/node-api-js/blob/873b0f8/src/client/wallet.ts#L16)
+[client/wallet.ts:16](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/wallet.ts#L16)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[client/wallet.ts:20](https://github.com/dmex-app/node-api-js/blob/873b0f8/src/client/wallet.ts#L20)
+[client/wallet.ts:20](https://github.com/dmex-app/node-api-js/blob/0ea0202/src/client/wallet.ts#L20)
