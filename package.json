@@ -27,7 +27,7 @@
 		"test": "jest",
 		"clean": "rm -rf dist build package docs",
 		"ts-node": "ts-node",
-		"docs": "typedoc --entryPoints src/main.ts",
+		"docs": "typedoc",
 		"build": "tsc -p tsconfig.json",
 		"build-all": "yarn clean && yarn build && yarn esbuild-browser",
 		"esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
@@ -45,6 +45,7 @@
 		"ts-jest": "^27.1.3",
 		"ts-node": "^10.4.0",
 		"typedoc": "^0.22.11",
+		"typedoc-plugin-markdown": "^3.11.13",
 		"typescript": "^4.5.5"
 	},
 	"dependencies": {

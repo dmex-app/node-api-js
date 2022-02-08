@@ -1,27 +1,27 @@
 import type {ExpandedSignature} from '../types';
 
-export type ApiParams = {
+export interface ApiParams {
 	baseURL?: string,
 	timeout?: number
-};
+}
 
-export type ApiResponse<D = unknown> = {
+export interface ApiResponse<D = unknown> {
 	data: D
-};
+}
 
-export type ApiErrorResponse = {
+export interface ApiErrorResponse {
 	errors: [{
 		message: string,
 		source?: string
 	}]
-};
+}
 
-export type ApiPingResponse = {
+export interface ApiPingResponse {
 	message: string,
 	ip: string
-};
+}
 
-export type ApiCreateOrderQuery = {
+export interface ApiCreateOrderQuery extends ExpandedSignature {
 	contract_address: string;
 	futures_contract_hash: string;
 	user_address: string;
@@ -32,17 +32,17 @@ export type ApiCreateOrderQuery = {
 	leverage: string;
 	order_hash: string;
 	stop_price?: string;
-} & ExpandedSignature;
+}
 
-export type ApiCancelOrderQuery = {
+export interface ApiCancelOrderQuery extends ExpandedSignature {
 	contract_address: string;
 	order_hash: string;
 	user_address: string;
 	nonce: number;
 	cancel_hash: string;
-} & ExpandedSignature;
+}
 
-export type ApiCreateContractQuery = {
+export interface ApiCreateContractQuery {
 	contract_model_hash: string,
 	expiration_block: number,
 	multiplier: string,
@@ -52,16 +52,16 @@ export type ApiCreateContractQuery = {
 	contract_hash: string
 }
 
-export type ApiCreateOrderWithContractQuery = {
+export interface ApiCreateOrderWithContractQuery {
 	order: ApiCreateOrderQuery,
 	contract: ApiCreateContractQuery
-};
+}
 
-export type ApiMinOrderAmountQuery = {
+export interface ApiMinOrderAmountQuery {
 	user_address: string
-};
+}
 
-export type ApiMinOrderAmountGuestResponse = {
+export interface ApiMinOrderAmountGuestResponse {
 	min_order_amount_usd: string;
 	gas_price_gwei: string;
 	global_mm_multiplier: string;
@@ -69,14 +69,14 @@ export type ApiMinOrderAmountGuestResponse = {
 	block_number: number;
 	liquidation_funds: { [key: string]: string; };
 	base_multipliers: { [key: string]: string; };
-};
+}
 
-export type ApiMinOrderAmountUserResponse = ApiMinOrderAmountGuestResponse & {
+export interface ApiMinOrderAmountUserResponse extends ApiMinOrderAmountGuestResponse {
 	user_mm_multiplier: string;
 	total_open_positions: string;
-};
+}
 
-export type ApiAssetShortResponse = {
+export interface ApiAssetShortResponse {
 	name: string;
 	label: string;
 	symbol: string;
@@ -85,9 +85,9 @@ export type ApiAssetShortResponse = {
 	amount_dec: number;
 	notional: string;
 	maintenance_margin: string | null
-};
+}
 
-export type ApiContractFiltersQuery = {
+export interface ApiContractFiltersQuery {
 	contract_address?: string;
 	futures_asset_hash?: string;
 	contract_state?: number;
@@ -98,9 +98,9 @@ export type ApiContractFiltersQuery = {
 	is_hidden?: boolean;
 	limit?: number;
 	offset?: number;
-};
+}
 
-export type ApiContractResponse = {
+export interface ApiContractResponse {
 	id: number;
 	contract_address: string;
 	futures_contract_hash: string;
@@ -131,23 +131,23 @@ export type ApiContractResponse = {
 	created_at: string;
 	mark_price: string;
 	futures_asset: ApiAssetShortResponse;
-};
+}
 
-export type ApiContractMultiplierQuery = {
+export interface ApiContractMultiplierQuery {
 	base_token: string;
 }
 
-export type ApiContractMultiplierResponse = {
+export interface ApiContractMultiplierResponse {
 	multiplier: string;
 	base_token: string;
 }
 
-export type ApiBaseTokenResponse = {
+export interface ApiBaseTokenResponse {
 	symbol: string;
 	token_address: string;
 }
 
-export type ApiAssetQuery = {
+export interface ApiAssetQuery {
 	contract_address?: string;
 	base_token?: string;
 	name?: string;
@@ -155,9 +155,9 @@ export type ApiAssetQuery = {
 	type?: string;
 	limit?: number;
 	offset?: number;
-};
+}
 
-export type ApiAssetResponse = {
+export interface ApiAssetResponse {
 	id: number;
 	contract_address: string;
 	futures_asset_hash: string;
@@ -173,16 +173,16 @@ export type ApiAssetResponse = {
 	}
 }
 
-export type ApiOpenPositionQuery = {
+export interface ApiOpenPositionQuery {
 	user_address: string;
 	contract_address?: string;
 	futures_asset_hash?: string;
 	side?: boolean;
 	contract_expires_in_seconds?: number;
 	contract_margin?: number
-};
+}
 
-export type ApiPositionResponse = {
+export interface ApiPositionResponse {
 	id: number;
 	position_hash: string;
 	side: boolean;

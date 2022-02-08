@@ -1,23 +1,24 @@
-import type {ExpandedSignature} from '../types';
 import type {
-	ApiParams,
-	ApiCreateOrderQuery
+	ApiParams
 } from '../api';
 
-export type ClientParams = {
+export interface ClientParams {
 	apiParams?: ApiParams,
 	walletPrivateKey: string,
 	contractAddress: string,
 	avgBlockTime?: number
-};
+}
 
-export type CreateOrderWithContractHashParams = Omit<ApiCreateOrderQuery,
-	'user_address' | 'contract_address' | 'nonce' | 'order_hash' | 'leverage' | keyof ExpandedSignature
-	> & {
+export interface CreateOrderWithContractHashParams {
+	futures_contract_hash: string;
+	amount: string;
 	leverage: number;
-};
+	price: string;
+	side: boolean;
+	stop_price?: string;
+}
 
-export type CreateOrderParams = {
+export interface CreateOrderParams {
 	asset_symbol: string;
 	margin_currency?: string;
 	expires_seconds?: number;
@@ -26,4 +27,4 @@ export type CreateOrderParams = {
 	price: string;
 	side: boolean;
 	stop_price?: string;
-};
+}

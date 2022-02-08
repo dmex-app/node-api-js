@@ -1,6 +1,6 @@
 import {keccak256} from '@ethersproject/solidity';
 
-export type CreateOrderHashParams = {
+export interface CreateOrderHashParams {
 	contract_address: string;
 	futures_contract_hash: string;
 	user_address: string;
@@ -9,7 +9,7 @@ export type CreateOrderHashParams = {
 	side: boolean;
 	nonce: number;
 	leverage: string;
-};
+}
 
 export function createOrderHash(params: CreateOrderHashParams): string {
 	return keccak256([
@@ -33,12 +33,12 @@ export function createOrderHash(params: CreateOrderHashParams): string {
 	]);
 }
 
-export type CancelOrderHashParams = {
+export interface CancelOrderHashParams {
 	contract_address: string;
 	order_hash: string;
 	user_address: string;
 	nonce: number;
-};
+}
 
 export function createCancelOrderHash(params: CancelOrderHashParams): string {
 	return keccak256([
@@ -54,7 +54,7 @@ export function createCancelOrderHash(params: CancelOrderHashParams): string {
 	]);
 }
 
-export type CreateContractHashParams = {
+export interface CreateContractHashParams {
 	contract_address: string;
 	asset_hash: string;
 	expiration_block: number;
@@ -62,7 +62,7 @@ export type CreateContractHashParams = {
 	funding_rate: string;
 	perpetual: boolean;
 	maintenance_margin: string;
-};
+}
 
 export function createContractHash(params: CreateContractHashParams): string {
 	return keccak256([
