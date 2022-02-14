@@ -11,7 +11,9 @@ yarn add dmex-api-js
 ```
 
 ## Documentation
-- [Code documentation](docs/README.md)
+- [DmexClient](docs/classes/DmexClient.md)
+  - [Create order](docs/classes/DmexClient.md#createorder)
+  - [Cancel order](docs/classes/DmexClient.md#cancelorder)
 
 ## Basic example
 ```javascript
