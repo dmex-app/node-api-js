@@ -2,7 +2,7 @@
 
 # Class: DmexApi
 
-DMEX API wrapper
+DMEX API wrapper.
 
 ## Table of contents
 
@@ -42,7 +42,7 @@ Constructor
 
 #### Defined in
 
-[api/api.ts:40](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L40)
+[api/api.ts:40](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L40)
 
 ## Methods
 
@@ -50,23 +50,23 @@ Constructor
 
 ▸ **cancelOrder**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Cancel order
+Cancels an active order.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiCancelOrderQuery`](../interfaces/ApiCancelOrderQuery.md) | Cancel order params |
+| `params` | [`ApiCancelOrderQuery`](../interfaces/ApiCancelOrderQuery.md) | Cancel order parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Successful message
+Successful message.
 
 #### Defined in
 
-[api/api.ts:117](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L117)
+[api/api.ts:117](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L117)
 
 ___
 
@@ -74,23 +74,23 @@ ___
 
 ▸ **createOrder**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Create order
+Creates a new order.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiCreateOrderQuery`](../interfaces/ApiCreateOrderQuery.md) | Create order params |
+| `params` | [`ApiCreateOrderQuery`](../interfaces/ApiCreateOrderQuery.md) | Order parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Successful message
+Successful message.
 
 #### Defined in
 
-[api/api.ts:103](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L103)
+[api/api.ts:103](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L103)
 
 ___
 
@@ -98,23 +98,23 @@ ___
 
 ▸ **createOrderWithModelContract**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Create order and futures contract simultaneously
+Creates a new futures contract and a new order on it.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiCreateOrderWithContractQuery`](../interfaces/ApiCreateOrderWithContractQuery.md) | Order and contract params |
+| `params` | [`ApiCreateOrderWithContractQuery`](../interfaces/ApiCreateOrderWithContractQuery.md) | Order and contract parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
 
-Successful message
+Successful message.
 
 #### Defined in
 
-[api/api.ts:131](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L131)
+[api/api.ts:131](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L131)
 
 ___
 
@@ -122,23 +122,23 @@ ___
 
 ▸ **getAssets**(`params?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiAssetResponse`](../interfaces/ApiAssetResponse.md)[]\>\>
 
-Get futures assets
+Get futures assets.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params?` | [`ApiAssetQuery`](../interfaces/ApiAssetQuery.md) | Filter parameters |
+| `params?` | [`ApiAssetQuery`](../interfaces/ApiAssetQuery.md) | Filter parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiAssetResponse`](../interfaces/ApiAssetResponse.md)[]\>\>
 
-Filtered assets
+Filtered assets.
 
 #### Defined in
 
-[api/api.ts:227](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L227)
+[api/api.ts:228](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L228)
 
 ___
 
@@ -146,23 +146,23 @@ ___
 
 ▸ **getBaseTokenBySymbol**(`symbol`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiBaseTokenResponse`](../interfaces/ApiBaseTokenResponse.md)\>\>
 
-Get base token by symbol
+Get base token by symbol.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `symbol` | `string` | The symbol (ETH) |
+| `symbol` | `string` | The symbol (ETH). |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiBaseTokenResponse`](../interfaces/ApiBaseTokenResponse.md)\>\>
 
-Object response
+Object response.
 
 #### Defined in
 
-[api/api.ts:202](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L202)
+[api/api.ts:203](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L203)
 
 ___
 
@@ -170,23 +170,23 @@ ___
 
 ▸ **getContract**(`contractHash`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractResponse`](../interfaces/ApiContractResponse.md)\>\>
 
-Get one futures contract
+Get one futures contract.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `contractHash` | `string` | Futures contract hash |
+| `contractHash` | `string` | Futures contract hash. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractResponse`](../interfaces/ApiContractResponse.md)\>\>
 
-Futures contract details
+Futures contract details.
 
 #### Defined in
 
-[api/api.ts:175](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L175)
+[api/api.ts:176](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L176)
 
 ___
 
@@ -194,23 +194,23 @@ ___
 
 ▸ **getContracts**(`params?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractResponse`](../interfaces/ApiContractResponse.md)[]\>\>
 
-Get futures contracts
+Get futures contracts.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params?` | [`ApiContractFiltersQuery`](../interfaces/ApiContractFiltersQuery.md) | Futures contract filters |
+| `params?` | [`ApiContractFiltersQuery`](../interfaces/ApiContractFiltersQuery.md) | Query filters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractResponse`](../interfaces/ApiContractResponse.md)[]\>\>
 
-Filtered futures contracts
+Filtered futures contracts.
 
 #### Defined in
 
-[api/api.ts:161](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L161)
+[api/api.ts:162](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L162)
 
 ___
 
@@ -218,17 +218,17 @@ ___
 
 ▸ **getDefaultBaseToken**(): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiBaseTokenResponse`](../interfaces/ApiBaseTokenResponse.md)\>\>
 
-Get default base token
+Get default base token.
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiBaseTokenResponse`](../interfaces/ApiBaseTokenResponse.md)\>\>
 
-Object response
+Object response.
 
 #### Defined in
 
-[api/api.ts:214](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L214)
+[api/api.ts:215](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L215)
 
 ___
 
@@ -236,23 +236,24 @@ ___
 
 ▸ **getMinOrderAmount**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiMinOrderAmountUserResponse`](../interfaces/ApiMinOrderAmountUserResponse.md)\>\>
 
-Get order minimum order parameters
+Get minimum order parameters.
+Useful properties for order creation.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiMinOrderAmountQuery`](../interfaces/ApiMinOrderAmountQuery.md) | Query parameters |
+| `params` | [`ApiMinOrderAmountQuery`](../interfaces/ApiMinOrderAmountQuery.md) | Optional query parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiMinOrderAmountUserResponse`](../interfaces/ApiMinOrderAmountUserResponse.md)\>\>
 
-Minimum order response
+Minimum order response.
 
 #### Defined in
 
-[api/api.ts:145](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L145)
+[api/api.ts:146](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L146)
 
 ▸ **getMinOrderAmount**(): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiMinOrderAmountGuestResponse`](../interfaces/ApiMinOrderAmountGuestResponse.md)\>\>
 
@@ -262,7 +263,7 @@ Minimum order response
 
 #### Defined in
 
-[api/api.ts:146](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L146)
+[api/api.ts:147](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L147)
 
 ___
 
@@ -270,23 +271,23 @@ ___
 
 ▸ **getMultiplier**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractMultiplierResponse`](../interfaces/ApiContractMultiplierResponse.md)\>\>
 
-Get current multiplier
+Get current multiplier.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiContractMultiplierQuery`](../interfaces/ApiContractMultiplierQuery.md) | Query params |
+| `params` | [`ApiContractMultiplierQuery`](../interfaces/ApiContractMultiplierQuery.md) | Query parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiContractMultiplierResponse`](../interfaces/ApiContractMultiplierResponse.md)\>\>
 
-Multiplier response
+Multiplier response.
 
 #### Defined in
 
-[api/api.ts:188](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L188)
+[api/api.ts:189](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L189)
 
 ___
 
@@ -294,23 +295,23 @@ ___
 
 ▸ **getOpenPositions**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiPositionResponse`](../interfaces/ApiPositionResponse.md)[]\>\>
 
-Get open positions
+Get open positions.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`ApiOpenPositionQuery`](../interfaces/ApiOpenPositionQuery.md) | Query parameters |
+| `params` | [`ApiOpenPositionQuery`](../interfaces/ApiOpenPositionQuery.md) | Filter parameters. |
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiPositionResponse`](../interfaces/ApiPositionResponse.md)[]\>\>
 
-Open positions
+Filtered open positions.
 
 #### Defined in
 
-[api/api.ts:241](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L241)
+[api/api.ts:242](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L242)
 
 ___
 
@@ -318,7 +319,7 @@ ___
 
 ▸ **httpRequest**<`TR`\>(`reqParams`): `Promise`<`TR`\>
 
-Perform a http request to API base URL
+Perform a http request to API base URL.
 
 #### Type parameters
 
@@ -330,17 +331,17 @@ Perform a http request to API base URL
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `reqParams` | `AxiosRequestConfig`<`any`\> | Request params |
+| `reqParams` | `AxiosRequestConfig`<`any`\> | Request parameters. |
 
 #### Returns
 
 `Promise`<`TR`\>
 
-API response
+API response.
 
 #### Defined in
 
-[api/api.ts:56](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L56)
+[api/api.ts:56](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L56)
 
 ___
 
@@ -348,14 +349,14 @@ ___
 
 ▸ **ping**(): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiPingResponse`](../interfaces/ApiPingResponse.md)\>\>
 
-Ping-pong endpoint for testing the connectivity with API Server
+Test connectivity to the API.
 
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiPingResponse`](../interfaces/ApiPingResponse.md)\>\>
 
-Ping-pong response
+Ping-pong response.
 
 #### Defined in
 
-[api/api.ts:91](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/api.ts#L91)
+[api/api.ts:91](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/api.ts#L91)

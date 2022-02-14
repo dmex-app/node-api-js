@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[api/types.ts:70](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L70)
+[api/types.ts:70](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L70)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:72](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L72)
+[api/types.ts:72](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L72)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:69](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L69)
+[api/types.ts:69](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L69)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:66](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L66)
+[api/types.ts:66](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L66)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:68](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L68)
+[api/types.ts:68](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L68)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:67](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L67)
+[api/types.ts:67](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L67)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:71](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L71)
+[api/types.ts:71](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L71)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:65](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L65)
+[api/types.ts:65](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L65)
 
 ___
 
@@ -151,7 +151,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:77](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L77)
+[api/types.ts:77](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L77)
 
 ___
 
@@ -161,4 +161,4 @@ ___
 
 #### Defined in
 
-[api/types.ts:76](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/api/types.ts#L76)
+[api/types.ts:76](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L76)

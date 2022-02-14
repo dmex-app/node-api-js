@@ -2,7 +2,7 @@
 
 # Class: DmexClient
 
-DMEX API client
+DMEX API client.
 
 ## Table of contents
 
@@ -33,11 +33,11 @@ DMEX API client
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `clientParams` | [`ClientParams`](../interfaces/ClientParams.md) | Client parameters |
+| `clientParams` | [`ClientParams`](../interfaces/ClientParams.md) | Client parameters. |
 
 #### Defined in
 
-[client/client.ts:31](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L31)
+[client/client.ts:32](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L32)
 
 ## Properties
 
@@ -47,7 +47,7 @@ DMEX API client
 
 #### Defined in
 
-[client/client.ts:24](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L24)
+[client/client.ts:25](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L25)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:25](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L25)
+[client/client.ts:26](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L26)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:26](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L26)
+[client/client.ts:27](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L27)
 
 ## Methods
 
@@ -75,13 +75,13 @@ ___
 
 ▸ **cancelOrder**(`orderHash`): `Promise`<`void`\>
 
-Cancel order
+Cancels an active order.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `orderHash` | `string` | Order hash |
+| `orderHash` | `string` | Order hash. |
 
 #### Returns
 
@@ -89,7 +89,7 @@ Cancel order
 
 #### Defined in
 
-[client/client.ts:113](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L113)
+[client/client.ts:115](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L115)
 
 ___
 
@@ -97,23 +97,23 @@ ___
 
 ▸ **createOrder**(`params`): `Promise`<`string`\>
 
-Create order
+Creates a new order.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | [`CreateOrderParams`](../interfaces/CreateOrderParams.md) | Order parameters |
+| `params` | [`CreateOrderParams`](../interfaces/CreateOrderParams.md) | Order parameters. |
 
 #### Returns
 
 `Promise`<`string`\>
 
-Order hash
+Order hash.
 
 #### Defined in
 
-[client/client.ts:61](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L61)
+[client/client.ts:63](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L63)
 
 ___
 
@@ -121,13 +121,13 @@ ___
 
 ▸ **setContractAddress**(`contractAddress`): `void`
 
-Set active smart contract address
+Set active DMEX trading smart contract address.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `contractAddress` | `string` | Futures smart contract address |
+| `contractAddress` | `string` | DMEX trading smart contract address. |
 
 #### Returns
 
@@ -135,7 +135,7 @@ Set active smart contract address
 
 #### Defined in
 
-[client/client.ts:51](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L51)
+[client/client.ts:53](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L53)
 
 ___
 
@@ -143,13 +143,14 @@ ___
 
 ▸ **setWallet**(`privateKey`): `void`
 
-Set active wallet
+Set active wallet.
+The wallet is required for ETH signatures (for ex.: order creation) and user identification.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `privateKey` | `string` | Wallet private key |
+| `privateKey` | `string` | Wallet private key. |
 
 #### Returns
 
@@ -157,4 +158,4 @@ Set active wallet
 
 #### Defined in
 
-[client/client.ts:42](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/client.ts#L42)
+[client/client.ts:44](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L44)

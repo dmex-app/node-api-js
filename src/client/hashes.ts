@@ -11,6 +11,12 @@ export interface CreateOrderHashParams {
 	leverage: string;
 }
 
+/**
+ * Creates the order hash.
+ *
+ * @param params The order hash parameters.
+ * @returns The order hash.
+ */
 export function createOrderHash(params: CreateOrderHashParams): string {
 	return keccak256([
 		'address',
@@ -40,6 +46,12 @@ export interface CancelOrderHashParams {
 	nonce: number;
 }
 
+/**
+ * Creates the cancel order hash.
+ *
+ * @param params The cancel order hash parameters.
+ * @returns The cancel order hash.
+ */
 export function createCancelOrderHash(params: CancelOrderHashParams): string {
 	return keccak256([
 		'address',
@@ -64,6 +76,12 @@ export interface CreateContractHashParams {
 	maintenance_margin: string;
 }
 
+/**
+ * Creates the futures contract hash.
+ *
+ * @param params The contract hash parameters.
+ * @returns The contract hash.
+ */
 export function createContractHash(params: CreateContractHashParams): string {
 	return keccak256([
 		'address',

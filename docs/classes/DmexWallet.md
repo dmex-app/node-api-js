@@ -2,7 +2,7 @@
 
 # Class: DmexWallet
 
-DMEX Wallet
+DMEX Wallet.
 
 ## Table of contents
 
@@ -29,7 +29,7 @@ DMEX Wallet
 
 #### Defined in
 
-[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/wallet.ts#L12)
+[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/wallet.ts#L12)
 
 ## Methods
 
@@ -41,9 +41,11 @@ DMEX Wallet
 
 `string`
 
+The wallet address.
+
 #### Defined in
 
-[client/wallet.ts:16](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/wallet.ts#L16)
+[client/wallet.ts:19](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/wallet.ts#L19)
 
 ___
 
@@ -51,16 +53,20 @@ ___
 
 ▸ **signHash**(`hash`): `Promise`<[`ExpandedSignature`](../interfaces/ExpandedSignature.md)\>
 
+Signs a hash.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hash` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `hash` | `string` | The hash to sign. |
 
 #### Returns
 
 `Promise`<[`ExpandedSignature`](../interfaces/ExpandedSignature.md)\>
 
+The signature parameters (v, r, s).
+
 #### Defined in
 
-[client/wallet.ts:20](https://github.com/dmex-app/node-api-js/blob/f3f4876/src/client/wallet.ts#L20)
+[client/wallet.ts:29](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/wallet.ts#L29)

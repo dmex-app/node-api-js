@@ -3,19 +3,19 @@ import type {
 } from '../api';
 
 /**
- * Dmex Client constructor parameters
+ * Dmex Client constructor parameters.
  */
 export interface ClientParams {
-	/** API parameters (Base URL, timeout) */
+	/** API wrapper parameters. */
 	apiParams?: ApiParams,
-	/** Used for signatures */
+	/** Used for signatures and user identification. */
 	walletPrivateKey: string,
-	/** DMEX Trading smart contract address */
+	/** DMEX Trading smart contract address. */
 	contractAddress: string
 }
 
 /**
- * Create order parameters
+ * Create order parameters.
  */
 export interface CreateOrderParams {
 	asset_symbol: string;

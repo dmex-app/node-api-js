@@ -26,7 +26,7 @@ import type {
 import {ApiError} from '../errors';
 
 /**
- * DMEX API wrapper
+ * DMEX API wrapper.
  */
 export class DmexApi {
 	private readonly axios: AxiosInstance;
@@ -34,8 +34,8 @@ export class DmexApi {
 	/**
 	 * Constructor
 	 *
-	 * @param baseURL DMEX API base URL (by default production API is used)
-	 * @param timeout HTTP request timeout
+	 * @param baseURL DMEX API base URL (by default production API is used).
+	 * @param timeout HTTP request timeout.
 	 */
 	constructor({baseURL = API_BASE_URL, timeout = HTTP_TIMEOUT_MS}: ApiParams = {}) {
 		this.axios = axios.create({
@@ -48,10 +48,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Perform a http request to API base URL
+	 * Perform a http request to API base URL.
 	 *
-	 * @param reqParams Request params
-	 * @returns API response
+	 * @param reqParams Request parameters.
+	 * @returns API response.
 	 */
 	public async httpRequest<TR = ApiResponse>(reqParams: AxiosRequestConfig): Promise<TR> {
 		return this.axios.request(reqParams)
@@ -84,9 +84,9 @@ export class DmexApi {
 	}
 
 	/**
-	 * Ping-pong endpoint for testing the connectivity with API Server
+	 * Test connectivity to the API.
 	 *
-	 * @returns Ping-pong response
+	 * @returns Ping-pong response.
 	 */
 	public ping(): Promise<ApiResponse<ApiPingResponse>> {
 		return this.httpRequest({
@@ -95,10 +95,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Create order
+	 * Creates a new order.
 	 *
-	 * @param params Create order params
-	 * @returns Successful message
+	 * @param params Order parameters.
+	 * @returns Successful message.
 	 */
 	public createOrder(params: ApiCreateOrderQuery): Promise<ApiResponse<string>> {
 		return this.httpRequest({
@@ -109,10 +109,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Cancel order
+	 * Cancels an active order.
 	 *
-	 * @param params Cancel order params
-	 * @returns Successful message
+	 * @param params Cancel order parameters.
+	 * @returns Successful message.
 	 */
 	public cancelOrder(params: ApiCancelOrderQuery): Promise<ApiResponse<string>> {
 		return this.httpRequest({
@@ -123,10 +123,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Create order and futures contract simultaneously
+	 * Creates a new futures contract and a new order on it.
 	 *
-	 * @param params Order and contract params
-	 * @returns Successful message
+	 * @param params Order and contract parameters.
+	 * @returns Successful message.
 	 */
 	public createOrderWithModelContract(params: ApiCreateOrderWithContractQuery): Promise<ApiResponse<string>> {
 		return this.httpRequest({
@@ -137,14 +137,15 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get order minimum order parameters
+	 * Get minimum order parameters.
+	 * Useful properties for order creation.
 	 *
-	 * @param params Query parameters
-	 * @returns Minimum order response
+	 * @param params Optional query parameters.
+	 * @returns Minimum order response.
 	 */
 	public getMinOrderAmount(params: ApiMinOrderAmountQuery): Promise<ApiResponse<ApiMinOrderAmountUserResponse>>;
 	public getMinOrderAmount(): Promise<ApiResponse<ApiMinOrderAmountGuestResponse>>;
-	public getMinOrderAmount(params?: ApiMinOrderAmountQuery): Promise<ApiResponse<ApiMinOrderAmountGuestResponse> | ApiResponse<ApiMinOrderAmountUserResponse>> {
+	public getMinOrderAmount(params?: ApiMinOrderAmountQuery): Promise<ApiResponse<ApiMinOrderAmountGuestResponse | ApiMinOrderAmountUserResponse>> {
 		return this.httpRequest({
 			url: '/api/futures/orders/min-order-amount',
 			method: 'get',
@@ -153,10 +154,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get futures contracts
+	 * Get futures contracts.
 	 *
-	 * @param params Futures contract filters
-	 * @returns Filtered futures contracts
+	 * @param params Query filters.
+	 * @returns Filtered futures contracts.
 	 */
 	public getContracts(params?: ApiContractFiltersQuery): Promise<ApiResponse<ApiContractResponse[]>> {
 		return this.httpRequest({
@@ -167,10 +168,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get one futures contract
+	 * Get one futures contract.
 	 *
-	 * @param contractHash Futures contract hash
-	 * @returns Futures contract details
+	 * @param contractHash Futures contract hash.
+	 * @returns Futures contract details.
 	 */
 	public getContract(contractHash: string): Promise<ApiResponse<ApiContractResponse>> {
 		return this.httpRequest({
@@ -180,10 +181,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get current multiplier
+	 * Get current multiplier.
 	 *
-	 * @param params Query params
-	 * @returns Multiplier response
+	 * @param params Query parameters.
+	 * @returns Multiplier response.
 	 */
 	public getMultiplier(params: ApiContractMultiplierQuery): Promise<ApiResponse<ApiContractMultiplierResponse>> {
 		return this.httpRequest({
@@ -194,10 +195,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get base token by symbol
+	 * Get base token by symbol.
 	 *
-	 * @param symbol The symbol (ETH)
-	 * @returns Object response
+	 * @param symbol The symbol (ETH).
+	 * @returns Object response.
 	 */
 	public getBaseTokenBySymbol(symbol: string): Promise<ApiResponse<ApiBaseTokenResponse>> {
 		return this.httpRequest({
@@ -207,9 +208,9 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get default base token
+	 * Get default base token.
 	 *
-	 * @returns Object response
+	 * @returns Object response.
 	 */
 	public getDefaultBaseToken(): Promise<ApiResponse<ApiBaseTokenResponse>> {
 		return this.httpRequest({
@@ -219,10 +220,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get futures assets
+	 * Get futures assets.
 	 *
-	 * @param params Filter parameters
-	 * @returns Filtered assets
+	 * @param params Filter parameters.
+	 * @returns Filtered assets.
 	 */
 	public getAssets(params?: ApiAssetQuery): Promise<ApiResponse<ApiAssetResponse[]>> {
 		return this.httpRequest({
@@ -233,10 +234,10 @@ export class DmexApi {
 	}
 
 	/**
-	 * Get open positions
+	 * Get open positions.
 	 *
-	 * @param params Query parameters
-	 * @returns Open positions
+	 * @param params Filter parameters.
+	 * @returns Filtered open positions.
 	 */
 	public getOpenPositions(params: ApiOpenPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
 		return this.httpRequest({

@@ -11,14 +11,15 @@ import type {
 	ApiMinOrderAmountUserResponse,
 	ApiAssetResponse
 } from '../api';
-import {createOrderHash, createCancelOrderHash, createContractHash} from './hashes';
+
 import {DmexApi} from '../api';
-import {DmexWallet} from './wallet';
 import {nextNonce} from '../utils';
 import {ClientError} from '../errors';
+import {createOrderHash, createCancelOrderHash, createContractHash} from './hashes';
+import {DmexWallet} from './wallet';
 
 /**
- * DMEX API client
+ * DMEX API client.
  */
 export class DmexClient {
 	public readonly api: DmexApi;
@@ -26,7 +27,7 @@ export class DmexClient {
 	public wallet: DmexWallet;
 
 	/**
-	 * @param clientParams Client parameters
+	 * @param clientParams Client parameters.
 	 */
 	constructor(clientParams: ClientParams) {
 		this.api = new DmexApi(clientParams.apiParams);
@@ -35,28 +36,29 @@ export class DmexClient {
 	}
 
 	/**
-	 * Set active wallet
+	 * Set active wallet.
+	 * The wallet is required for ETH signatures (for ex.: order creation) and user identification.
 	 *
-	 * @param privateKey Wallet private key
+	 * @param privateKey Wallet private key.
 	 */
 	public setWallet(privateKey: string): void {
 		this.wallet = new DmexWallet(privateKey);
 	}
 
 	/**
-	 * Set active smart contract address
+	 * Set active DMEX trading smart contract address.
 	 *
-	 * @param contractAddress Futures smart contract address
+	 * @param contractAddress DMEX trading smart contract address.
 	 */
 	public setContractAddress(contractAddress: string): void {
 		this.contractAddress = contractAddress;
 	}
 
 	/**
-	 * Create order
+	 * Creates a new order.
 	 *
-	 * @param params Order parameters
-	 * @returns Order hash
+	 * @param params Order parameters.
+	 * @returns Order hash.
 	 */
 	public async createOrder(params: CreateOrderParams): Promise<string> {
 		const {data: baseToken} = params.margin_currency === undefined
@@ -106,9 +108,9 @@ export class DmexClient {
 	}
 
 	/**
-	 * Cancel order
+	 * Cancels an active order.
 	 *
-	 * @param orderHash Order hash
+	 * @param orderHash Order hash.
 	 */
 	public async cancelOrder(orderHash: string): Promise<void> {
 		const nonce = nextNonce();

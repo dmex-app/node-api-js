@@ -4,7 +4,7 @@ import {
 	createContractHash
 } from './hashes';
 
-test('createOrderHash', () => {
+test('createOrderHash.', () => {
 	const orderHash = createOrderHash({
 		contract_address: '0x3584F3257b143109fF11E52266094241Fdb7984c',
 		futures_contract_hash: '0x16c0a9eeaddb4ad652478330bec7a2e699d9b7222c618e23d5955517c306ca62',
@@ -19,7 +19,7 @@ test('createOrderHash', () => {
 	expect(orderHash).toBe('0xaafd28560079b1a4d95ddad4c9758aad26ca210a2f2cc39920dba855b48ae53d');
 });
 
-test('createCancelOrderHash', () => {
+test('createCancelOrderHash.', () => {
 	const cancelHash = createCancelOrderHash({
 		contract_address: '0x3584F3257b143109fF11E52266094241Fdb7984c',
 		nonce: 1644149722558,
@@ -30,7 +30,7 @@ test('createCancelOrderHash', () => {
 	expect(cancelHash).toBe('0x31c1a77aba652e82826f6f7339fba1eb78fc548e172e710a62ae3a88ad885f2a');
 });
 
-test('createContractHash', () => {
+test('createContractHash.', () => {
 	const contractHash = createContractHash({
 		contract_address: '0x3584F3257b143109fF11E52266094241Fdb7984c',
 		asset_hash: '0xc8c82b0e7e3b61dd644346182965d520dd314f284c14728f22e5c832709130c3',
