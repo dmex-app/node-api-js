@@ -20,22 +20,28 @@ yarn add dmex-api-js
 const {DmexClient} = require('dmex-api-js');
 
 const dmexClient = new DmexClient({
+	apiParams: {
+		// Demo API (by default prod. API is used)
+		baseURL: 'https://api.demo.dmex.app'
+	},
 	walletPrivateKey: 'YOUR_PRIVATE_KEY',
 	contractAddress: 'DMEX_TRADING_SMART_CONTARCT_ADDRESS'
 });
 
+// Create a new order
 dmexClient.createOrder({
 	asset_symbol: 'ETH',
-	leverage: 3,
-	amount: '100000000',
-	price: '300000000000',
-	side: true,
+	leverage: 3, // x3
+	amount: '100000000', // 100000000 / 1e8 = 1
+	price: '300000000000', // 300000000000 / 1e8 = 3000
+	side: true // true = long, false = short
 	// margin_currency: 'ETH', // optional, default ETH
 	// expires_seconds: -1, // optional (-1 means perpetual)
 }).then(orderHash => {
-	console.info('order hash:', orderHash);
+	console.info('created order hash:', orderHash);
 });
 
-dmexClient.cancelOrder('0x1cf490b0af8810bd0f377a4b47f050816213b3058eb500e232f7b7fa2cc61c81') // cancel by order hash
+// Cancel an active order
+dmexClient.cancelOrder('0x1cf490b0af8810bd0f377a4b47f050816213b3058eb500e232f7b7fa2cc61c81')
 	.then(() => console.info('order canceled'));
 ```

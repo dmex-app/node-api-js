@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[api/types.ts:21](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L21)
+[api/types.ts:21](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/types.ts#L21)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[api/types.ts:20](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/api/types.ts#L20)
+[api/types.ts:20](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/types.ts#L20)

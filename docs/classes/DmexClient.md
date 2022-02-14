@@ -37,7 +37,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:32](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L32)
+[client/client.ts:32](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L32)
 
 ## Properties
 
@@ -47,7 +47,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:25](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L25)
+[client/client.ts:25](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L25)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:26](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L26)
+[client/client.ts:26](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L26)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:27](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L27)
+[client/client.ts:27](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L27)
 
 ## Methods
 
@@ -89,7 +89,7 @@ Cancels an active order.
 
 #### Defined in
 
-[client/client.ts:115](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L115)
+[client/client.ts:115](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L115)
 
 ___
 
@@ -113,7 +113,7 @@ Order hash.
 
 #### Defined in
 
-[client/client.ts:63](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L63)
+[client/client.ts:63](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L63)
 
 ___
 
@@ -135,7 +135,7 @@ Set active DMEX trading smart contract address.
 
 #### Defined in
 
-[client/client.ts:53](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L53)
+[client/client.ts:53](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L53)
 
 ___
 
@@ -158,4 +158,4 @@ The wallet is required for ETH signatures (for ex.: order creation) and user ide
 
 #### Defined in
 
-[client/client.ts:44](https://github.com/dmex-app/node-api-js/blob/9394cf2/src/client/client.ts#L44)
+[client/client.ts:44](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L44)
