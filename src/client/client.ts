@@ -9,7 +9,10 @@ import type {
 	ApiCreateOrderQuery,
 	ApiContractResponse,
 	ApiMinOrderAmountUserResponse,
-	ApiAssetResponse
+	ApiAssetResponse,
+	ApiOrderbookResponse,
+	ApiPositionResponse,
+	ApiOpenPositionQuery
 } from '../api';
 
 import {DmexApi} from '../api';
@@ -72,8 +75,7 @@ export class DmexClient {
 
 		const asset = await this.getAssetBySymbolAndBaseToken(params.asset_symbol, baseToken.token_address);
 
-		const {data: positions} = await this.api.getOpenPositions({
-			user_address: this.wallet.getAddress(),
+		const positions = await this.getOpenPositions({
 			futures_asset_hash: asset.futures_asset_hash,
 			side: !params.side,
 			contract_expires_in_seconds: expiresInSeconds,
@@ -132,6 +134,32 @@ export class DmexClient {
 			nonce,
 			...signValues
 		});
+	}
+
+	/**
+	 * Get order book.
+	 *
+	 * @param assetSymbol Asset symbol (ex.: ETH, BTC).
+	 * @returns The orderbook.
+	 */
+	public getOrderbook(assetSymbol: string): Promise<ApiOrderbookResponse> {
+		return this.api.getOrderbook({
+			futures_asset_symbol: assetSymbol,
+			user_address: this.wallet.getAddress()
+		}).then(data => data.data);
+	}
+
+	/**
+	 * Get user open positions.
+	 *
+	 * @param filters Optional filters.
+	 * @returns Open positions.
+	 */
+	public getOpenPositions(filters?: Omit<ApiOpenPositionQuery, 'user_address'>) : Promise<ApiPositionResponse[]> {
+		return this.api.getOpenPositions({
+			...filters,
+			user_address: this.wallet.getAddress()
+		}).then(data => data.data);
 	}
 
 	private async createOrderOnExistingContract(params: CreateOrderWithContractHashParams): Promise<string> {

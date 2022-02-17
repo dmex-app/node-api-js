@@ -225,3 +225,24 @@ export interface ApiPositionResponse {
 		};
 	};
 }
+
+export interface ApiOrderbookQuery {
+	/** Contract hash */
+	futures_contract_hash?: string;
+	/** Asset symbol */
+	futures_asset_symbol?: string;
+	/** Used to mark user orders inside order book lists */
+	user_address?: string;
+}
+
+export type ApiOrderbookItem = [
+	qty: string,
+	price: string,
+	is_mine: boolean
+];
+
+export interface ApiOrderbookResponse {
+	asks: ApiOrderbookItem[]
+	bids: ApiOrderbookItem[]
+	update_id: number
+}

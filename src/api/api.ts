@@ -21,7 +21,9 @@ import type {
 	ApiAssetQuery,
 	ApiAssetResponse,
 	ApiOpenPositionQuery,
-	ApiPositionResponse
+	ApiPositionResponse,
+	ApiOrderbookQuery,
+	ApiOrderbookResponse
 } from './types';
 import {ApiError} from '../errors';
 
@@ -242,6 +244,20 @@ export class DmexApi {
 	public getOpenPositions(params: ApiOpenPositionQuery): Promise<ApiResponse<ApiPositionResponse[]>> {
 		return this.httpRequest({
 			url: '/api/futures/positions-v2/open',
+			method: 'get',
+			params
+		});
+	}
+
+	/**
+	 * Get order book.
+	 *
+	 * @param params Query parameters.
+	 * @returns The orderbook.
+	 */
+	public getOrderbook(params: ApiOrderbookQuery): Promise<ApiResponse<ApiOrderbookResponse>> {
+		return this.httpRequest({
+			url: '/api/futures/orderbook',
 			method: 'get',
 			params
 		});
