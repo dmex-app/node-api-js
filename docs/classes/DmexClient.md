@@ -20,6 +20,9 @@ DMEX API client.
 
 - [cancelOrder](DmexClient.md#cancelorder)
 - [createOrder](DmexClient.md#createorder)
+- [getOpenPositions](DmexClient.md#getopenpositions)
+- [getOrderbook](DmexClient.md#getorderbook)
+- [getTicker](DmexClient.md#getticker)
 - [setContractAddress](DmexClient.md#setcontractaddress)
 - [setWallet](DmexClient.md#setwallet)
 
@@ -37,7 +40,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:32](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L32)
+[client/client.ts:36](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L36)
 
 ## Properties
 
@@ -47,7 +50,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:25](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L25)
+[client/client.ts:29](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L29)
 
 ___
 
@@ -57,7 +60,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:26](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L26)
+[client/client.ts:30](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L30)
 
 ___
 
@@ -67,7 +70,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:27](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L27)
+[client/client.ts:31](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L31)
 
 ## Methods
 
@@ -89,7 +92,7 @@ Cancels an active order.
 
 #### Defined in
 
-[client/client.ts:115](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L115)
+[client/client.ts:118](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L118)
 
 ___
 
@@ -113,7 +116,79 @@ Order hash.
 
 #### Defined in
 
-[client/client.ts:63](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L63)
+[client/client.ts:67](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L67)
+
+___
+
+### getOpenPositions
+
+▸ **getOpenPositions**(`filters?`): `Promise`<[`ApiPositionResponse`](../interfaces/ApiPositionResponse.md)[]\>
+
+Get user open positions.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filters?` | `Omit`<[`ApiOpenPositionQuery`](../interfaces/ApiOpenPositionQuery.md), ``"user_address"``\> | Optional filters. |
+
+#### Returns
+
+`Promise`<[`ApiPositionResponse`](../interfaces/ApiPositionResponse.md)[]\>
+
+Open positions.
+
+#### Defined in
+
+[client/client.ts:159](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L159)
+
+___
+
+### getOrderbook
+
+▸ **getOrderbook**(`symbol`): `Promise`<[`ApiOrderbookResponse`](../interfaces/ApiOrderbookResponse.md)\>
+
+Get order book.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `symbol` | `string` | Asset symbol (ex.: ETH). |
+
+#### Returns
+
+`Promise`<[`ApiOrderbookResponse`](../interfaces/ApiOrderbookResponse.md)\>
+
+The orderbook.
+
+#### Defined in
+
+[client/client.ts:146](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L146)
+
+___
+
+### getTicker
+
+▸ **getTicker**(`symbol`): `Promise`<[`ApiTickerResponse`](../interfaces/ApiTickerResponse.md)\>
+
+Get one ticker.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `symbol` | `string` | Asset symbol. (ex.: BTC). |
+
+#### Returns
+
+`Promise`<[`ApiTickerResponse`](../interfaces/ApiTickerResponse.md)\>
+
+Ticker object.
+
+#### Defined in
+
+[client/client.ts:172](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L172)
 
 ___
 
@@ -135,7 +210,7 @@ Set active DMEX trading smart contract address.
 
 #### Defined in
 
-[client/client.ts:53](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L53)
+[client/client.ts:57](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L57)
 
 ___
 
@@ -158,4 +233,4 @@ The wallet is required for ETH signatures (for ex.: order creation) and user ide
 
 #### Defined in
 
-[client/client.ts:44](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/client/client.ts#L44)
+[client/client.ts:48](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/client.ts#L48)

@@ -1,24 +1,24 @@
 import type {ExpandedSignature} from '../types';
 
 export interface ApiParams {
-	baseURL?: string,
-	timeout?: number
+	baseURL?: string;
+	timeout?: number;
 }
 
 export interface ApiResponse<D = unknown> {
-	data: D
+	data: D;
 }
 
 export interface ApiErrorResponse {
 	errors: [{
-		message: string,
-		source?: string
+		message: string;
+		source?: string;
 	}]
 }
 
 export interface ApiPingResponse {
-	message: string,
-	ip: string
+	message: string;
+	ip: string;
 }
 
 export interface ApiCreateOrderQuery extends ExpandedSignature {
@@ -43,18 +43,18 @@ export interface ApiCancelOrderQuery extends ExpandedSignature {
 }
 
 export interface ApiCreateContractQuery {
-	contract_model_hash: string,
-	expiration_block: number,
-	multiplier: string,
-	funding_rate: string,
-	perpetual: boolean,
-	maintenance_margin: string,
-	contract_hash: string
+	contract_model_hash: string;
+	expiration_block: number;
+	multiplier: string;
+	funding_rate: string;
+	perpetual: boolean;
+	maintenance_margin: string;
+	contract_hash: string;
 }
 
 export interface ApiCreateOrderWithContractQuery {
-	order: ApiCreateOrderQuery,
-	contract: ApiCreateContractQuery
+	order: ApiCreateOrderQuery;
+	contract: ApiCreateContractQuery;
 }
 
 export interface ApiMinOrderAmountQuery {
@@ -242,7 +242,16 @@ export type ApiOrderbookItem = [
 ];
 
 export interface ApiOrderbookResponse {
-	asks: ApiOrderbookItem[]
-	bids: ApiOrderbookItem[]
-	update_id: number
+	asks: ApiOrderbookItem[];
+	bids: ApiOrderbookItem[];
+	update_id: number;
+}
+
+export interface ApiTickerResponse {
+	/** Asset symbol (ex.: BTC) */
+	symbol: string;
+	/** Asset name (ex.: BTCUSD) */
+	name: string;
+	/** Last price */
+	last: string|null;
 }

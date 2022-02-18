@@ -12,7 +12,8 @@ import type {
 	ApiAssetResponse,
 	ApiOrderbookResponse,
 	ApiPositionResponse,
-	ApiOpenPositionQuery
+	ApiOpenPositionQuery,
+	ApiTickerResponse
 } from '../api';
 
 import {DmexApi} from '../api';
@@ -139,12 +140,12 @@ export class DmexClient {
 	/**
 	 * Get order book.
 	 *
-	 * @param assetSymbol Asset symbol (ex.: ETH, BTC).
+	 * @param symbol Asset symbol (ex.: ETH).
 	 * @returns The orderbook.
 	 */
-	public getOrderbook(assetSymbol: string): Promise<ApiOrderbookResponse> {
+	public getOrderbook(symbol: string): Promise<ApiOrderbookResponse> {
 		return this.api.getOrderbook({
-			futures_asset_symbol: assetSymbol,
+			futures_asset_symbol: symbol,
 			user_address: this.wallet.getAddress()
 		}).then(data => data.data);
 	}
@@ -160,6 +161,16 @@ export class DmexClient {
 			...filters,
 			user_address: this.wallet.getAddress()
 		}).then(data => data.data);
+	}
+
+	/**
+	 * Get one ticker.
+	 *
+	 * @param symbol Asset symbol. (ex.: BTC).
+	 * @returns Ticker object.
+	 */
+	public getTicker(symbol: string): Promise<ApiTickerResponse> {
+		return this.api.getTicker(symbol).then(data => data.data);
 	}
 
 	private async createOrderOnExistingContract(params: CreateOrderWithContractHashParams): Promise<string> {

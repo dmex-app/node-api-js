@@ -23,6 +23,8 @@ DMEX API wrapper.
 - [getMinOrderAmount](DmexApi.md#getminorderamount)
 - [getMultiplier](DmexApi.md#getmultiplier)
 - [getOpenPositions](DmexApi.md#getopenpositions)
+- [getOrderbook](DmexApi.md#getorderbook)
+- [getTicker](DmexApi.md#getticker)
 - [httpRequest](DmexApi.md#httprequest)
 - [ping](DmexApi.md#ping)
 
@@ -42,7 +44,7 @@ Constructor
 
 #### Defined in
 
-[api/api.ts:40](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L40)
+[api/api.ts:43](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L43)
 
 ## Methods
 
@@ -66,7 +68,7 @@ Successful message.
 
 #### Defined in
 
-[api/api.ts:117](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L117)
+[api/api.ts:120](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L120)
 
 ___
 
@@ -90,7 +92,7 @@ Successful message.
 
 #### Defined in
 
-[api/api.ts:103](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L103)
+[api/api.ts:106](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L106)
 
 ___
 
@@ -114,7 +116,7 @@ Successful message.
 
 #### Defined in
 
-[api/api.ts:131](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L131)
+[api/api.ts:134](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L134)
 
 ___
 
@@ -138,7 +140,7 @@ Filtered assets.
 
 #### Defined in
 
-[api/api.ts:228](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L228)
+[api/api.ts:231](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L231)
 
 ___
 
@@ -152,7 +154,7 @@ Get base token by symbol.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `symbol` | `string` | The symbol (ETH). |
+| `symbol` | `string` | The symbol (ex.: ETH). |
 
 #### Returns
 
@@ -162,7 +164,7 @@ Object response.
 
 #### Defined in
 
-[api/api.ts:203](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L203)
+[api/api.ts:206](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L206)
 
 ___
 
@@ -186,7 +188,7 @@ Futures contract details.
 
 #### Defined in
 
-[api/api.ts:176](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L176)
+[api/api.ts:179](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L179)
 
 ___
 
@@ -210,7 +212,7 @@ Filtered futures contracts.
 
 #### Defined in
 
-[api/api.ts:162](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L162)
+[api/api.ts:165](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L165)
 
 ___
 
@@ -228,7 +230,7 @@ Object response.
 
 #### Defined in
 
-[api/api.ts:215](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L215)
+[api/api.ts:218](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L218)
 
 ___
 
@@ -253,7 +255,7 @@ Minimum order response.
 
 #### Defined in
 
-[api/api.ts:146](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L146)
+[api/api.ts:149](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L149)
 
 ▸ **getMinOrderAmount**(): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiMinOrderAmountGuestResponse`](../interfaces/ApiMinOrderAmountGuestResponse.md)\>\>
 
@@ -263,7 +265,7 @@ Minimum order response.
 
 #### Defined in
 
-[api/api.ts:147](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L147)
+[api/api.ts:150](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L150)
 
 ___
 
@@ -287,7 +289,7 @@ Multiplier response.
 
 #### Defined in
 
-[api/api.ts:189](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L189)
+[api/api.ts:192](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L192)
 
 ___
 
@@ -311,7 +313,55 @@ Filtered open positions.
 
 #### Defined in
 
-[api/api.ts:242](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L242)
+[api/api.ts:245](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L245)
+
+___
+
+### getOrderbook
+
+▸ **getOrderbook**(`params`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiOrderbookResponse`](../interfaces/ApiOrderbookResponse.md)\>\>
+
+Get order book.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `params` | [`ApiOrderbookQuery`](../interfaces/ApiOrderbookQuery.md) | Query parameters. |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiOrderbookResponse`](../interfaces/ApiOrderbookResponse.md)\>\>
+
+The orderbook.
+
+#### Defined in
+
+[api/api.ts:259](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L259)
+
+___
+
+### getTicker
+
+▸ **getTicker**(`symbol`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiTickerResponse`](../interfaces/ApiTickerResponse.md)\>\>
+
+Get one ticker.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `symbol` | `string` | The symbol (ex.: ETH). |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiTickerResponse`](../interfaces/ApiTickerResponse.md)\>\>
+
+Ticker object.
+
+#### Defined in
+
+[api/api.ts:273](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L273)
 
 ___
 
@@ -341,7 +391,7 @@ API response.
 
 #### Defined in
 
-[api/api.ts:56](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L56)
+[api/api.ts:59](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L59)
 
 ___
 
@@ -359,4 +409,4 @@ Ping-pong response.
 
 #### Defined in
 
-[api/api.ts:91](https://github.com/dmex-app/node-api-js/blob/402fa0b/src/api/api.ts#L91)
+[api/api.ts:94](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/api.ts#L94)

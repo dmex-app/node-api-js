@@ -1,4 +1,4 @@
-# node-api-js (alpha version)
+# node-api-js
 
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/dmex-api-js)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/dmex-app/node-api-js/blob/main/LICENSE)
@@ -14,6 +14,9 @@ yarn add dmex-api-js
 - [DmexClient](docs/classes/DmexClient.md)
   - [Create order](docs/classes/DmexClient.md#createorder)
   - [Cancel order](docs/classes/DmexClient.md#cancelorder)
+  - [Get ticker](docs/classes/DmexClient.md#getticker)
+  - [Get orderbook](docs/classes/DmexClient.md#getorderbook)
+  - [Get open positions](docs/classes/DmexClient.md#getopenpositions)
 
 ## Basic example
 ```javascript

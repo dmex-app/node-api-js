@@ -7,11 +7,11 @@ import type {
  */
 export interface ClientParams {
 	/** API wrapper parameters. */
-	apiParams?: ApiParams,
+	apiParams?: ApiParams;
 	/** Used for signatures and user identification. */
-	walletPrivateKey: string,
+	walletPrivateKey: string;
 	/** DMEX Trading smart contract address. */
-	contractAddress: string
+	contractAddress: string;
 }
 
 /**

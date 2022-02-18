@@ -23,7 +23,8 @@ import type {
 	ApiOpenPositionQuery,
 	ApiPositionResponse,
 	ApiOrderbookQuery,
-	ApiOrderbookResponse
+	ApiOrderbookResponse,
+	ApiTickerResponse
 } from './types';
 import {ApiError} from '../errors';
 
@@ -199,7 +200,7 @@ export class DmexApi {
 	/**
 	 * Get base token by symbol.
 	 *
-	 * @param symbol The symbol (ETH).
+	 * @param symbol The symbol (ex.: ETH).
 	 * @returns Object response.
 	 */
 	public getBaseTokenBySymbol(symbol: string): Promise<ApiResponse<ApiBaseTokenResponse>> {
@@ -260,6 +261,19 @@ export class DmexApi {
 			url: '/api/futures/orderbook',
 			method: 'get',
 			params
+		});
+	}
+
+	/**
+	 * Get one ticker.
+	 *
+	 * @param symbol The symbol (ex.: ETH).
+	 * @returns Ticker object.
+	 */
+	public getTicker(symbol: string): Promise<ApiResponse<ApiTickerResponse>> {
+		return this.httpRequest({
+			url: `/api/futures/tickers/${symbol}`,
+			method: 'get'
 		});
 	}
 }
