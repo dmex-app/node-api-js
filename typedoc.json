@@ -5,5 +5,7 @@
 	"excludePrivate": true,
 	"excludeInternal": true,
 	"excludeProtected": true,
+	"excludeExternals": true,
+	"externalPattern": "src/types/external/**/*",
 	"readme": "none"
 }

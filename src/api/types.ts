@@ -196,7 +196,7 @@ export interface ApiPositionResponse {
 	funding_cost: string;
 	entry_block: number;
 	fee: string;
-	closed_at: string|null;
+	closed_at: string | null;
 	created_at: string;
 	max_collateral: string;
 	mark_price: string;
@@ -227,17 +227,21 @@ export interface ApiPositionResponse {
 }
 
 export interface ApiOrderbookQuery {
-	/** Contract hash */
+	/** Contract hash. */
 	futures_contract_hash?: string;
-	/** Asset symbol */
+	/** Asset symbol. */
 	futures_asset_symbol?: string;
-	/** Used to mark user orders inside order book lists */
+	/** Used to mark the user's orders inside order book lists. */
 	user_address?: string;
 }
 
+/** Orderbook Item */
 export type ApiOrderbookItem = [
+	/** The quantity (8 decimals). */
 	qty: string,
+	/** The price (8 decimals). */
 	price: string,
+	/** The flag is true when the order is yours. */
 	is_mine: boolean
 ];
 
@@ -248,10 +252,71 @@ export interface ApiOrderbookResponse {
 }
 
 export interface ApiTickerResponse {
-	/** Asset symbol (ex.: BTC) */
+	/** Asset symbol (ex.: BTC). */
 	symbol: string;
-	/** Asset name (ex.: BTCUSD) */
+	/** Asset name (ex.: BTCUSD). */
 	name: string;
-	/** Last price */
-	last: string|null;
+	/** Last price (8 decimals). */
+	last: string | null;
+}
+
+export interface ApiTradeResponse {
+	id: number;
+	contract_address: string;
+	futures_contract_hash: string;
+	futures_asset_hash: string;
+	futures_asset_name: string;
+	side: boolean;
+	price: string;
+	maker_address: string | null;
+	taker_address: string | null;
+	amount_filled: string;
+	maker_pct_fee: string;
+	taker_pct_fee: string;
+	maker_amount_fee: string;
+	taker_amount_fee: string;
+	taker_gas_limit_fee: string;
+	taker_gas_fee: string;
+	tx_gas_price: string | null;
+	tx_block_number: number | null;
+	tx_hash: string | null;
+	is_confirmed: boolean | null;
+	closing_trade: boolean;
+	maker_order_hash: string | null;
+	taker_order_hash: string | null;
+	exchange: string;
+	created_at: string;
+	futures_asset: {
+		name: string;
+		label: string;
+		symbol: string;
+		chart_symbol: string;
+		decimals: number;
+		amount_dec: number;
+		notional: string;
+	};
+}
+
+export interface WsParams {
+	wsURL?: string;
+	timeout?: number;
+}
+
+export type WsEventCallback<D = unknown> = (event: D) => void;
+
+export type WsRemoveListener = () => void;
+
+export interface WsEventOrderbookUpdate {
+	event: {
+		name: string;
+	};
+	data: ApiOrderbookResponse;
+}
+
+export interface WsEventTrade {
+	event: {
+		name: string;
+		action: 'order_match' | 'trade_confirmation' | 'internal_trade';
+	};
+	data: ApiTradeResponse;
 }

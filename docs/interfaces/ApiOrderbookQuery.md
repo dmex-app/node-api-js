@@ -16,11 +16,11 @@
 
 • `Optional` **futures\_asset\_symbol**: `string`
 
-Asset symbol
+Asset symbol.
 
 #### Defined in
 
-[api/types.ts:233](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L233)
+[api/types.ts:233](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L233)
 
 ___
 
@@ -28,11 +28,11 @@ ___
 
 • `Optional` **futures\_contract\_hash**: `string`
 
-Contract hash
+Contract hash.
 
 #### Defined in
 
-[api/types.ts:231](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L231)
+[api/types.ts:231](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L231)
 
 ___
 
@@ -40,8 +40,8 @@ ___
 
 • `Optional` **user\_address**: `string`
 
-Used to mark user orders inside order book lists
+Used to mark the user's orders inside order book lists.
 
 #### Defined in
 
-[api/types.ts:235](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L235)
+[api/types.ts:235](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L235)

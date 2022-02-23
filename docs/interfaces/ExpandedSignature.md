@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[types/common.ts:3](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L3)
+[types/common.ts:3](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L3)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[types/common.ts:4](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L4)
+[types/common.ts:4](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L4)
 
 ___
 
@@ -46,4 +46,4 @@ ___
 
 #### Defined in
 
-[types/common.ts:2](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L2)
+[types/common.ts:2](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L2)

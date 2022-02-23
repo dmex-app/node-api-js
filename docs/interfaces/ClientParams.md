@@ -22,7 +22,7 @@ API wrapper parameters.
 
 #### Defined in
 
-[client/types.ts:10](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/types.ts#L10)
+[client/types.ts:10](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/types.ts#L10)
 
 ___
 
@@ -34,7 +34,7 @@ DMEX Trading smart contract address.
 
 #### Defined in
 
-[client/types.ts:14](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/types.ts#L14)
+[client/types.ts:14](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/types.ts#L14)
 
 ___
 
@@ -46,4 +46,4 @@ Used for signatures and user identification.
 
 #### Defined in
 
-[client/types.ts:12](https://github.com/dmex-app/node-api-js/blob/2403db6/src/client/types.ts#L12)
+[client/types.ts:12](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/types.ts#L12)

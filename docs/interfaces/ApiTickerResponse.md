@@ -16,11 +16,11 @@
 
 • **last**: ``null`` \| `string`
 
-Last price
+Last price (8 decimals).
 
 #### Defined in
 
-[api/types.ts:256](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L256)
+[api/types.ts:260](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L260)
 
 ___
 
@@ -28,11 +28,11 @@ ___
 
 • **name**: `string`
 
-Asset name (ex.: BTCUSD)
+Asset name (ex.: BTCUSD).
 
 #### Defined in
 
-[api/types.ts:254](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L254)
+[api/types.ts:258](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L258)
 
 ___
 
@@ -40,8 +40,8 @@ ___
 
 • **symbol**: `string`
 
-Asset symbol (ex.: BTC)
+Asset symbol (ex.: BTC).
 
 #### Defined in
 
-[api/types.ts:252](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L252)
+[api/types.ts:256](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L256)

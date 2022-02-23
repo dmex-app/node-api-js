@@ -12,11 +12,15 @@ yarn add dmex-api-js
 
 ## Documentation
 - [DmexClient](docs/classes/DmexClient.md)
-  - [Create order](docs/classes/DmexClient.md#createorder)
-  - [Cancel order](docs/classes/DmexClient.md#cancelorder)
-  - [Get ticker](docs/classes/DmexClient.md#getticker)
-  - [Get orderbook](docs/classes/DmexClient.md#getorderbook)
-  - [Get open positions](docs/classes/DmexClient.md#getopenpositions)
+  - HTTP endpoints
+    - [Create order](docs/classes/DmexClient.md#createorder)
+    - [Cancel order](docs/classes/DmexClient.md#cancelorder)
+    - [Get ticker](docs/classes/DmexClient.md#getticker)
+    - [Get orderbook](docs/classes/DmexClient.md#getorderbook)
+    - [Get open positions](docs/classes/DmexClient.md#getopenpositions)
+  - Websocket events
+    - [onTrade](docs/classes/DmexClient.md#ontrade)
+    - [onOrderbookUpdate](docs/classes/DmexClient.md#onorderbookupdate)
 
 ## Basic example
 ```javascript

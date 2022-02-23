@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[api/types.ts:28](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L28)
+[api/types.ts:28](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L28)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:25](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L25)
+[api/types.ts:25](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L25)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:26](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L26)
+[api/types.ts:26](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L26)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:32](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L32)
+[api/types.ts:32](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L32)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:31](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L31)
+[api/types.ts:31](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L31)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:33](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L33)
+[api/types.ts:33](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L33)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:29](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L29)
+[api/types.ts:29](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L29)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[types/common.ts:3](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L3)
+[types/common.ts:3](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L3)
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-[types/common.ts:4](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L4)
+[types/common.ts:4](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L4)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:30](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L30)
+[api/types.ts:30](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L30)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:34](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L34)
+[api/types.ts:34](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L34)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:27](https://github.com/dmex-app/node-api-js/blob/2403db6/src/api/types.ts#L27)
+[api/types.ts:27](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L27)
 
 ___
 
@@ -166,4 +166,4 @@ ___
 
 #### Defined in
 
-[types/common.ts:2](https://github.com/dmex-app/node-api-js/blob/2403db6/src/types/common.ts#L2)
+[types/common.ts:2](https://github.com/dmex-app/node-api-js/blob/70d7108/src/types/common.ts#L2)

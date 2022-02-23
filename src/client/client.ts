@@ -13,7 +13,11 @@ import type {
 	ApiOrderbookResponse,
 	ApiPositionResponse,
 	ApiOpenPositionQuery,
-	ApiTickerResponse
+	ApiTickerResponse,
+	WsEventCallback,
+	WsRemoveListener,
+	WsEventOrderbookUpdate,
+	WsEventTrade
 } from '../api';
 
 import {DmexApi} from '../api';
@@ -66,8 +70,8 @@ export class DmexClient {
 	 */
 	public async createOrder(params: CreateOrderParams): Promise<string> {
 		const {data: baseToken} = params.margin_currency === undefined
-			? await this.api.getDefaultBaseToken()
-			: await this.api.getBaseTokenBySymbol(params.margin_currency);
+			? await this.api.http.getDefaultBaseToken()
+			: await this.api.http.getBaseTokenBySymbol(params.margin_currency);
 
 		let expiresInSeconds = params.expires_seconds ?? -1;
 		if (expiresInSeconds === -1) {
@@ -127,7 +131,7 @@ export class DmexClient {
 
 		const signValues = await this.wallet.signHash(cancelHash);
 
-		await this.api.cancelOrder({
+		await this.api.http.cancelOrder({
 			contract_address: this.contractAddress,
 			order_hash: orderHash,
 			user_address: this.wallet.getAddress(),
@@ -144,7 +148,7 @@ export class DmexClient {
 	 * @returns The orderbook.
 	 */
 	public getOrderbook(symbol: string): Promise<ApiOrderbookResponse> {
-		return this.api.getOrderbook({
+		return this.api.http.getOrderbook({
 			futures_asset_symbol: symbol,
 			user_address: this.wallet.getAddress()
 		}).then(data => data.data);
@@ -157,7 +161,7 @@ export class DmexClient {
 	 * @returns Open positions.
 	 */
 	public getOpenPositions(filters?: Omit<ApiOpenPositionQuery, 'user_address'>) : Promise<ApiPositionResponse[]> {
-		return this.api.getOpenPositions({
+		return this.api.http.getOpenPositions({
 			...filters,
 			user_address: this.wallet.getAddress()
 		}).then(data => data.data);
@@ -170,19 +174,43 @@ export class DmexClient {
 	 * @returns Ticker object.
 	 */
 	public getTicker(symbol: string): Promise<ApiTickerResponse> {
-		return this.api.getTicker(symbol).then(data => data.data);
+		return this.api.http.getTicker(symbol).then(data => data.data);
+	}
+
+	/**
+	 * Listen for all trade events.
+	 *
+	 * @param cbFn Callback function.
+	 * @returns Function you can call to remove the listener.
+	 */
+	public onTrade(cbFn: WsEventCallback<WsEventTrade>): WsRemoveListener {
+		return this.api.ws.onTrade(cbFn);
+	}
+
+	/**
+	 * Subscribe and listen for order book update events.
+	 * Warning: you can listen events for only one symbol at once.
+	 *
+	 * @param symbol Asset symbol.
+	 * @param cbFn Callback function.
+	 * @returns Function you can call to remove the listener.
+	 */
+	public async onOrderbookUpdate(symbol: string, cbFn: WsEventCallback<WsEventOrderbookUpdate>): Promise<WsRemoveListener> {
+		await this.api.ws.subscribeToAsset(symbol);
+
+		return this.api.ws.onOrderbookUpdate(cbFn);
 	}
 
 	private async createOrderOnExistingContract(params: CreateOrderWithContractHashParams): Promise<string> {
 		const createOrderParams = await this.prepareCreateOrder(params);
 
-		await this.api.createOrder(createOrderParams);
+		await this.api.http.createOrder(createOrderParams);
 
 		return createOrderParams.order_hash;
 	}
 
 	private async createOrderOnNewContract(params: CreateOrderWithContractHashParams): Promise<string> {
-		const {data: modelContract} = await this.api.getContract(params.futures_contract_hash);
+		const {data: modelContract} = await this.api.http.getContract(params.futures_contract_hash);
 		if (!modelContract.is_model) {
 			throw new ClientError(`Specified futures contract is not an model contract (hash: ${params.futures_contract_hash})`);
 		}
@@ -228,7 +256,7 @@ export class DmexClient {
 			leverage: params.leverage
 		});
 
-		await this.api.createOrderWithModelContract({
+		await this.api.http.createOrderWithModelContract({
 			order: createOrderProps,
 			contract: {
 				contract_model_hash: modelContract.futures_contract_hash,
@@ -278,17 +306,17 @@ export class DmexClient {
 	}
 
 	private getMinOrderAmount(): Promise<ApiMinOrderAmountUserResponse> {
-		return this.api.getMinOrderAmount({
+		return this.api.http.getMinOrderAmount({
 			user_address: this.wallet.getAddress()
 		}).then(res => res.data);
 	}
 
 	private getMultiplier(baseToken: string): Promise<string> {
-		return this.api.getMultiplier({base_token: baseToken}).then(res => res.data.multiplier);
+		return this.api.http.getMultiplier({base_token: baseToken}).then(res => res.data.multiplier);
 	}
 
 	private getAssetBySymbolAndBaseToken(symbol: string, baseTokenAddr: string): Promise<ApiAssetResponse> {
-		return this.api.getAssets({
+		return this.api.http.getAssets({
 			contract_address: this.contractAddress,
 			symbol,
 			base_token: baseTokenAddr,
@@ -303,7 +331,7 @@ export class DmexClient {
 	}
 
 	private getModelContract(assetHash: string, expireInSeconds: number, leverage: number): Promise<ApiContractResponse> {
-		return this.api.getContracts({
+		return this.api.http.getContracts({
 			futures_asset_hash: assetHash,
 			expires_in_seconds: expireInSeconds,
 			margin: leverage,
