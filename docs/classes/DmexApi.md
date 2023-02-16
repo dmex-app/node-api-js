@@ -29,7 +29,7 @@ Constructor.
 
 #### Defined in
 
-[api/api.ts:16](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/api.ts#L16)
+[api/api.ts:16](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/api.ts#L16)
 
 ## Properties
 
@@ -39,7 +39,7 @@ Constructor.
 
 #### Defined in
 
-[api/api.ts:7](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/api.ts#L7)
+[api/api.ts:7](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/api.ts#L7)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[api/api.ts:8](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/api.ts#L8)
+[api/api.ts:8](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/api.ts#L8)

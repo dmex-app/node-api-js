@@ -20,7 +20,7 @@ Last price (8 decimals).
 
 #### Defined in
 
-[api/types.ts:260](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L260)
+[api/types.ts:260](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L260)
 
 ___
 
@@ -32,7 +32,7 @@ Asset name (ex.: BTCUSD).
 
 #### Defined in
 
-[api/types.ts:258](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L258)
+[api/types.ts:258](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L258)
 
 ___
 
@@ -44,4 +44,4 @@ Asset symbol (ex.: BTC).
 
 #### Defined in
 
-[api/types.ts:256](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L256)
+[api/types.ts:256](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L256)

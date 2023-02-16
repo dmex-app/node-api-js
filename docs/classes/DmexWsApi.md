@@ -36,7 +36,7 @@ Constructor.
 
 #### Defined in
 
-[api/ws.ts:27](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L27)
+[api/ws.ts:27](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L27)
 
 ## Methods
 
@@ -52,7 +52,7 @@ Disconnect websocket
 
 #### Defined in
 
-[api/ws.ts:128](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L128)
+[api/ws.ts:128](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L128)
 
 ___
 
@@ -70,7 +70,7 @@ Connection status.
 
 #### Defined in
 
-[api/ws.ts:117](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L117)
+[api/ws.ts:117](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L117)
 
 ___
 
@@ -94,7 +94,7 @@ Function you can call to remove the listener.
 
 #### Defined in
 
-[api/ws.ts:98](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L98)
+[api/ws.ts:98](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L98)
 
 ___
 
@@ -118,7 +118,7 @@ Function you can call to remove the listener.
 
 #### Defined in
 
-[api/ws.ts:108](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L108)
+[api/ws.ts:108](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L108)
 
 ___
 
@@ -144,7 +144,7 @@ Successful message.
 
 #### Defined in
 
-[api/ws.ts:76](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L76)
+[api/ws.ts:76](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L76)
 
 ___
 
@@ -170,7 +170,7 @@ Successful message.
 
 #### Defined in
 
-[api/ws.ts:88](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L88)
+[api/ws.ts:88](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L88)
 
 ___
 
@@ -202,4 +202,4 @@ The response.
 
 #### Defined in
 
-[api/ws.ts:63](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/ws.ts#L63)
+[api/ws.ts:63](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/ws.ts#L63)

@@ -73,7 +73,7 @@ Orderbook Item
 
 #### Defined in
 
-[api/types.ts:239](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L239)
+[api/types.ts:239](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L239)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[api/types.ts:305](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L305)
+[api/types.ts:305](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L305)
 
 ___
 
@@ -121,4 +121,4 @@ ___
 
 #### Defined in
 
-[api/types.ts:307](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/types.ts#L307)
+[api/types.ts:307](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/types.ts#L307)

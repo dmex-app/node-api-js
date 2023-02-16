@@ -44,7 +44,7 @@ Constructor.
 
 #### Defined in
 
-[api/http.ts:43](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L43)
+[api/http.ts:43](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L43)
 
 ## Methods
 
@@ -68,7 +68,7 @@ Successful message.
 
 #### Defined in
 
-[api/http.ts:120](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L120)
+[api/http.ts:120](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L120)
 
 ___
 
@@ -92,7 +92,7 @@ Successful message.
 
 #### Defined in
 
-[api/http.ts:106](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L106)
+[api/http.ts:106](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L106)
 
 ___
 
@@ -116,7 +116,7 @@ Successful message.
 
 #### Defined in
 
-[api/http.ts:134](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L134)
+[api/http.ts:134](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L134)
 
 ___
 
@@ -140,7 +140,7 @@ Filtered assets.
 
 #### Defined in
 
-[api/http.ts:231](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L231)
+[api/http.ts:231](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L231)
 
 ___
 
@@ -164,7 +164,7 @@ Object response.
 
 #### Defined in
 
-[api/http.ts:206](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L206)
+[api/http.ts:206](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L206)
 
 ___
 
@@ -188,7 +188,7 @@ Futures contract details.
 
 #### Defined in
 
-[api/http.ts:179](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L179)
+[api/http.ts:179](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L179)
 
 ___
 
@@ -212,7 +212,7 @@ Filtered futures contracts.
 
 #### Defined in
 
-[api/http.ts:165](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L165)
+[api/http.ts:165](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L165)
 
 ___
 
@@ -230,7 +230,7 @@ Object response.
 
 #### Defined in
 
-[api/http.ts:218](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L218)
+[api/http.ts:218](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L218)
 
 ___
 
@@ -255,7 +255,7 @@ Minimum order response.
 
 #### Defined in
 
-[api/http.ts:149](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L149)
+[api/http.ts:149](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L149)
 
 ▸ **getMinOrderAmount**(): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`ApiMinOrderAmountGuestResponse`](../interfaces/ApiMinOrderAmountGuestResponse.md)\>\>
 
@@ -265,7 +265,7 @@ Minimum order response.
 
 #### Defined in
 
-[api/http.ts:150](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L150)
+[api/http.ts:150](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L150)
 
 ___
 
@@ -289,7 +289,7 @@ Multiplier response.
 
 #### Defined in
 
-[api/http.ts:192](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L192)
+[api/http.ts:192](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L192)
 
 ___
 
@@ -313,7 +313,7 @@ Filtered open positions.
 
 #### Defined in
 
-[api/http.ts:245](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L245)
+[api/http.ts:245](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L245)
 
 ___
 
@@ -337,7 +337,7 @@ The orderbook.
 
 #### Defined in
 
-[api/http.ts:259](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L259)
+[api/http.ts:259](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L259)
 
 ___
 
@@ -361,7 +361,7 @@ Ticker object.
 
 #### Defined in
 
-[api/http.ts:273](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L273)
+[api/http.ts:273](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L273)
 
 ___
 
@@ -391,7 +391,7 @@ API response.
 
 #### Defined in
 
-[api/http.ts:59](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L59)
+[api/http.ts:59](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L59)
 
 ___
 
@@ -409,4 +409,4 @@ Ping-pong response.
 
 #### Defined in
 
-[api/http.ts:94](https://github.com/dmex-app/node-api-js/blob/70d7108/src/api/http.ts#L94)
+[api/http.ts:94](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/api/http.ts#L94)

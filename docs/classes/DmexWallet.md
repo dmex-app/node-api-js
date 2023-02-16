@@ -29,7 +29,7 @@ DMEX Wallet.
 
 #### Defined in
 
-[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/wallet.ts#L12)
+[client/wallet.ts:12](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/wallet.ts#L12)
 
 ## Methods
 
@@ -45,7 +45,7 @@ The wallet address.
 
 #### Defined in
 
-[client/wallet.ts:19](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/wallet.ts#L19)
+[client/wallet.ts:19](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/wallet.ts#L19)
 
 ___
 
@@ -69,4 +69,4 @@ The signature parameters (v, r, s).
 
 #### Defined in
 
-[client/wallet.ts:29](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/wallet.ts#L29)
+[client/wallet.ts:29](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/wallet.ts#L29)

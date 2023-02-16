@@ -42,7 +42,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:40](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L40)
+[client/client.ts:40](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L40)
 
 ## Properties
 
@@ -52,7 +52,7 @@ DMEX API client.
 
 #### Defined in
 
-[client/client.ts:33](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L33)
+[client/client.ts:33](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L33)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:34](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L34)
+[client/client.ts:34](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L34)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[client/client.ts:35](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L35)
+[client/client.ts:35](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L35)
 
 ## Methods
 
@@ -94,7 +94,7 @@ Cancels an active order.
 
 #### Defined in
 
-[client/client.ts:122](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L122)
+[client/client.ts:122](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L122)
 
 ___
 
@@ -118,7 +118,7 @@ Order hash.
 
 #### Defined in
 
-[client/client.ts:71](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L71)
+[client/client.ts:71](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L71)
 
 ___
 
@@ -142,7 +142,7 @@ Open positions.
 
 #### Defined in
 
-[client/client.ts:163](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L163)
+[client/client.ts:163](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L163)
 
 ___
 
@@ -166,7 +166,7 @@ The orderbook.
 
 #### Defined in
 
-[client/client.ts:150](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L150)
+[client/client.ts:150](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L150)
 
 ___
 
@@ -190,7 +190,7 @@ Ticker object.
 
 #### Defined in
 
-[client/client.ts:176](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L176)
+[client/client.ts:176](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L176)
 
 ___
 
@@ -216,7 +216,7 @@ Function you can call to remove the listener.
 
 #### Defined in
 
-[client/client.ts:198](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L198)
+[client/client.ts:198](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L198)
 
 ___
 
@@ -240,7 +240,7 @@ Function you can call to remove the listener.
 
 #### Defined in
 
-[client/client.ts:186](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L186)
+[client/client.ts:186](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L186)
 
 ___
 
@@ -262,7 +262,7 @@ Set active DMEX trading smart contract address.
 
 #### Defined in
 
-[client/client.ts:61](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L61)
+[client/client.ts:61](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L61)
 
 ___
 
@@ -285,4 +285,4 @@ The wallet is required for ETH signatures (for ex.: order creation) and user ide
 
 #### Defined in
 
-[client/client.ts:52](https://github.com/dmex-app/node-api-js/blob/70d7108/src/client/client.ts#L52)
+[client/client.ts:52](https://github.com/dmex-app/node-api-js/blob/37c40d0/src/client/client.ts#L52)
